@@ -1,0 +1,25 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  .card {
+    width: 36vh;
+    height: 36vh;
+    margin: 5vh;
+    padding: 0;
+    text-align: center;
+    border-radius: 6px;
+    .cardImg {
+      width: 100%;
+    }
+    .cardLink {
+      text-decoration: none;
+
+      color: white;
+      cursor: auto;
+    }
+  }
+}

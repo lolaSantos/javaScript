@@ -1,0 +1,15 @@
+.navBarContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: aqua;
+
+  .navBar {
+    margin: 2vh;
+    list-style: none;
+
+    align-items: center;
+  }
+}

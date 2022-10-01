@@ -1,18 +1,31 @@
-/* let nombre = parseFloat(prompt("Ingresa tu nombre de usuario."));
- */
-/* function saludar(usuario) {
+let nombre = parseFloat(prompt("Ingresa tu nombre de usuario."));
+
+function saludar(usuario) {
   console.log("Hola", usuario);
 }
- */
+
+/* ESTA CREO QUE ES LA UNICA PARTE QUE ME FUNCIONA  */
+
+/* let algo = prompt("Ingresa algo:");
+console.log(algo);
+
+for (let i = 0; i < 5; i++) {
+  let nombre = prompt("Cual es tu nombre?");
+  if (nombre == "lola") {
+    break;
+  }
+  console.log(nombre + "tiene el turno:" + i + "asignado");
+}
+
+let empezar = confirm("Desea ver lista de prendas?");
+if (empezar) {
+  prendas();
+}
+
 let nombre = prompt("cual es tu nombre?");
 if (nombre) {
   console.log("Hola " + nombre);
-}
-
-/*   let empezar = confirm("Desea ver lista de prendas?");
-  if (empezar) {
-    prendas();
-  } */
+} */
 
 function prendas() {
   let prendas =
@@ -44,24 +57,6 @@ function prendas() {
   }
 }
 
-/* ciclos */
-
-/* let algo = prompt("Ingresa algo:");
-console.log(algo); */
-
-/* for (let i = 0; i < 5; i++) {
-  let nombre = prompt("Cual es tu nombre?");
-  if (nombre == "lola") {
-    break;
-  }
-  console.log(nombre + "tiene el turno:" + i + "asignado");
-}
- */
-
-generadorAutomatico(){
-  prendas.push()
-}
-
 function generarCarrito() {}
 const numeros = (12, 4, 56, 2, 333, 85);
 
@@ -81,7 +76,9 @@ function buscarPrenda() {
   console.log(resultado);
 }
 
-function filtrarPrendas(){
-  let buscar = prompt("Que prenda busca? ")
-  let resultado = prendas.filter(elemento => elemento.nombre)
+function filtrarPrendas() {
+  let buscar = prompt("Que prenda busca? ");
+  let resultado = prendas.filter((elemento) => elemento.nombre);
 }
+
+/* NO ENTIENDO NADA PERDON POR EL DESORDEN */

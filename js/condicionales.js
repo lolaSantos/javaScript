@@ -1,84 +1,141 @@
-let nombre = parseFloat(prompt("Ingresa tu nombre de usuario."));
+/* let nombre = prompt("Hola! ¿Cual es tu nombre?");
 
-function saludar(usuario) {
-  console.log("Hola", usuario);
-}
+//FUNCIONES Y OBJETOS
 
-/* ESTA CREO QUE ES LA UNICA PARTE QUE ME FUNCIONA  */
-
-/* let algo = prompt("Ingresa algo:");
-console.log(algo);
-
-for (let i = 0; i < 5; i++) {
-  let nombre = prompt("Cual es tu nombre?");
-  if (nombre == "lola") {
-    break;
-  }
-  console.log(nombre + "tiene el turno:" + i + "asignado");
-}
-
-let empezar = confirm("Desea ver lista de prendas?");
-if (empezar) {
-  prendas();
-}
-
-let nombre = prompt("cual es tu nombre?");
-if (nombre) {
+function saludar() {
   console.log("Hola " + nombre);
-} */
+}
 
-function prendas() {
-  let prendas =
-    "Prendas Disponibles: \n" +
-    "1)Vestido Sarim \n" +
-    "2)Jean Bluejean \n" +
-    "3)Falda Mafia";
+//saludar();
+ 
+// FUNCIONES CON PARAMETROS
 
-  let respuesta = prompt(
-    "Ingresa el nro. de la prenda para ver el precio: \n" + prendas
-  );
-  switch (parseInt(respuesta)) {
-    case 1:
-      console.log("Elegiste la prenda 'Vestido Sarim'. Su precio es $8.000.");
-      break;
-    case 2:
-      console.log("Elegiste la prenda 'Jean Bluejean'. Su precio es $11.000.");
-      break;
-    case 3:
-      console.log("Elegiste la prenda 'Falda Mafia'. Su precio es $5.000.");
-      break;
-    default:
-      console.error("No se reconoce la prenda que ingresaste.");
-  }
-
-  let continuar = confirm("Desea consultar el valor de otra prenda?");
-  if (continuar) {
-    prendas();
+function calcular(primerNumero, segundoNumero) {
+  if (!isNaN(primerNumero) || !isNaN(segundoNumero)) {
+    let resultado = primerNumero + segundoNumero;
+    console.log("Resultado: " + resultado);
+  } else {
+    alert("Solo Numeros");
   }
 }
 
-function generarCarrito() {}
-const numeros = (12, 4, 56, 2, 333, 85);
-
-function listarElementos(array, fn) {
-  for (elemento of array) fn(array);
+function pedirNumero() {
+  let primerNumero = parseFloat(prompt("Numero"));
+  let segundoNumero = parseFloat(prompt("Numero"));
+  calcular(primerNumero, segundoNumero);
 }
 
-function recorrerPrenda() {
-  productos.forEach(function (elemento) {
-    console.log(elemento);
-  });
+//En pedirnumero a lo ultimo vemos como  se reutiliza la funcion, en este caso, calcular.
+
+
+//FUNCIONES CON RETORNO
+
+ function realizarCalculo(pNo, sNo) {
+  return pNo * sNo;
 }
 
-function buscarPrenda() {
-  let buscar = prompt("Ingresa la prenda que buscas: ");
-  let resultado = productos.find((elemento) => prendas.nombre === buscar);
-  console.log(resultado);
+function verMult() {
+  debugger;
+  console.log("Resultado de la multiplicaicon:", realizarCalculo(4567, 5678));
+
+} 
+
+const persona1 = {
+  nombre: "Luis",
+  apellido: "Gonzalez",
+  edad: "30",
+  cargo: "administrativo",
+  ingreso: "30-10-2010",
+};
+
+const persona2 = {
+  nombre: "Javier",
+  apellido: "Ruiz",
+  edad: "33",
+  cargo: "vendedor",
+  ingreso: "22-12-2009",
+}; 
+
+
+// OBJETOS CONSTRUCTORES
+
+//la primera inicial de una funcion constructora debe ser en mayuscula.
+
+
+ function altaDeEmpleado() {
+  let nombre = prompt("Ingresa el nombre");
+  let apellido = prompt("Ingresa el apellido");
+  let edad = prompt("Ingresa edad");
+  let cargo = prompt("Ingresa el cargo");
+  let ingreso = prompt("Ingresa el ingreso");
 }
 
-function filtrarPrendas() {
-  let buscar = prompt("Que prenda busca? ");
-  let resultado = prendas.filter((elemento) => elemento.nombre);
+const empleado1 = new Empleado(nombre, apellido, edad, cargo, ingreso);
+console.log(empleado1); 
+
+function Empleado(nombre, apellido, edad, cargo, ingreso) {
+  this.nombre = nombre;
+  this.apellido = apellido;
+  this.edad = edad;
+  this.cargo = cargo;
+  this.ingreso = ingreso;
 }
 
-/* NO ENTIENDO NADA PERDON POR EL DESORDEN */
+const empleado1 = new Empleado(
+  "Luis",
+  "Gonzalez",
+  "30",
+  "administrativo",
+  "30-10-2010"
+);
+
+const empleado2 = new Empleado(
+  "Javier",
+  "Ruiz",
+  "33",
+  "vendedor",
+  "22-12-2009"
+);
+
+const IVA = 1.21;
+
+class Producto {
+  constructor(nombre, precio, stock) {
+    this.nombre = nombre;
+    this.precio = precio;
+    this.stock = stock;
+  }
+}
+precioFinal();
+{
+  return this.precio * IVA;
+}
+
+const producto1 = new Producto("KOKO", 7000, 10);
+const producto2 = new Producto("SEID", 4500, 15);
+const producto3 = new Producto("LOW", 9500, 7);
+
+
+
+class Cotizador {
+  constructor(metros2, alarma, factor) {
+    this.metros2 = metros2;
+    this.alarma = alarma;
+    this.factor = factor;
+  }
+  cotizarPoliza() {
+    return this.factor * this.metros2 * this.alarma;
+  }
+}
+
+const VALORFIJO = 36.33;
+
+function cotizarSeguro() {
+  debugger;
+  const metros2 = prompt("Ingresa los m2 de tu propiedad:");
+  const factor = 1.12;
+  const cotizadorHogar = new Cotizador(metros2, 1, VALORFIJO);
+  console.log("El costo del seguro es:", cotizadorHogar.cotizarPoliza());
+}
+
+*/

@@ -96,24 +96,10 @@ const empleado2 = new Empleado(
   "vendedor",
   "22-12-2009"
 );
-
-const IVA = 1.21;
-
-class Producto {
-  constructor(nombre, precio, stock) {
-    this.nombre = nombre;
-    this.precio = precio;
-    this.stock = stock;
-  }
-}
-precioFinal();
-{
-  return this.precio * IVA;
-}
-
 const producto1 = new Producto("KOKO", 7000, 10);
 const producto2 = new Producto("SEID", 4500, 15);
 const producto3 = new Producto("LOW", 9500, 7);
+
 
 
 
@@ -138,7 +124,7 @@ function cotizarSeguro() {
   console.log("El costo del seguro es:", cotizadorHogar.cotizarPoliza());
 }
 
-*/
+
 
 // ARRAYS Y FUNCIONES DE ORDEN SUPERIOR
 
@@ -168,7 +154,7 @@ function listarPaises() {
 // Para recorrer un array se suele usar el ciclo for
 
 function recorrerArray() {
-  /* for (let i = 0; i < paises.length; i++) console.log(paises[i]); */
+   for (let i = 0; i < paises.length; i++) console.log(paises[i]); 
 
   // ciclo FOR OF
 
@@ -205,7 +191,71 @@ function quitarPais() {
     paises.splice(posicion, 1); //SPLICE quita un elemento desde un indice especifico
     console.log(paisQuitar);
   }
-  /*  let paisQuitado = paises.pop()//Elimina el ultimo elemento del array
+    let paisQuitado = paises.pop()//Elimina el ultimo elemento del array
   let paisQuitado = paises.shift()//Elimina el pirmer elemento del array
-  console.log(paisQuitado) */
+  console.log(paisQuitado) 
 }
+ */
+
+const productos = [];
+
+class Producto {
+  constructor(id, nombre, importe) {
+    this.id = id;
+    this.nombre = nombre;
+    this.importe = this.importe;
+  }
+}
+
+function generadorAutomatico() {
+  productos.push(new Producto(1, "DRESS KOKO", 7000));
+  productos.push(new Producto(2, "POLLERA SEID", 3500));
+  productos.push(new Producto(3, "POLLERA LOW", 8000));
+  productos.push(new Producto(4, "SACO WAPA", 5500));
+  productos.push(new Producto(5, "MINI CLEAOTH", 4000));
+  productos.push(new Producto(6, "DRESS KALI", 7500));
+}
+
+generadorAutomatico();
+
+function listarProductos() {
+  console.table(productos);
+}
+
+const agregarProducto = () => {
+  let id = creoID();
+  let descripcion = prompt("Descripcion del nuevo producto:").toUpperCase();
+  let importe = parseFloat(prompt("Importe ( sin IVA ): "));
+  productos.push(new Producto(id, descripcion, importe));
+  listarProductos();
+};
+
+const creoID = () => parseInt(Math.random() * 10000); //ID numerico dinamico
+
+const resultado = (num1, num2) => num1 + num2;
+
+const IVA = 1.21;
+
+/* precioFinal();
+{
+  return parseFloat((this.importe * IVA).toFixed);
+} */
+
+function recorrerProductos() {
+  productos.forEach((elemento) => {
+    console.log;
+  });
+}
+
+function buscarProducto() {
+  let resultado = productos.find;
+}
+
+/* const numeros = [12, 4, 56, 2, 333, 85];
+
+function listarElementos(array, fn) {
+  for (elemento of array) {
+    fn(elemento);
+  }
+}
+ */

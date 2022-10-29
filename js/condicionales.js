@@ -139,3 +139,73 @@ function cotizarSeguro() {
 }
 
 */
+
+// ARRAYS Y FUNCIONES DE ORDEN SUPERIOR
+
+//Reservar la palabra const para declarar arrays.
+
+const IVA = 1.21;
+const nombre = "Lola Santos";
+const paises = [
+  "Argentina",
+  "Uruguay",
+  "Chile",
+  "Colombia",
+  "Venezuela",
+  "Mexico",
+  "Cuba",
+  "Guatemala",
+];
+const paisesDelNorte = ["Mexico", "USA", "Canada"];
+
+const productos = [];
+const carrito = [];
+
+function listarPaises() {
+  console.table(paises);
+}
+
+// Para recorrer un array se suele usar el ciclo for
+
+function recorrerArray() {
+  /* for (let i = 0; i < paises.length; i++) console.log(paises[i]); */
+
+  // ciclo FOR OF
+
+  for (pais of paises) {
+    debugger;
+    console.log(pais);
+  }
+}
+
+function agregarPais() {
+  let nuevoPais = prompt("Ingresa nuevos pais: ");
+  if (!paises.includes(nuevoPais)) {
+    paises.push(nuevoPais);
+    //console.log("El pais ya esta en la lista.")
+  } else {
+    respuesta = confirm(
+      "El pais " +
+        nuevoPais +
+        " ya esta en la lista de paises. Deseas agregar otro?"
+    );
+    if (respuesta) {
+      agregarPais();
+    }
+  }
+
+  paises.push(nuevoPais); //PUSH agrega elemento en la ultima posicion de un array
+  //paises.unshift(nuevoPais)//UNSHIFT agrega elemento en la primera posicion de un array
+}
+
+function quitarPais() {
+  let paisQuitar = prompt("Que pais queres quitar?:");
+  let posicion = paises.indexOf(paisQuitar); //IndexOFF ubica el indice de un elemento
+  if (posicion > -1) {
+    paises.splice(posicion, 1); //SPLICE quita un elemento desde un indice especifico
+    console.log(paisQuitar);
+  }
+  /*  let paisQuitado = paises.pop()//Elimina el ultimo elemento del array
+  let paisQuitado = paises.shift()//Elimina el pirmer elemento del array
+  console.log(paisQuitado) */
+}

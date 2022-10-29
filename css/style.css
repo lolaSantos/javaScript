@@ -11,20 +11,6 @@ body {
 }
 
 /* GLOBAL END */
-.navBarContainer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: aqua;
-}
-.navBarContainer .navBar {
-  margin: 2vh;
-  list-style: none;
-  align-items: center;
-}
-
 .titleContainer {
   text-align: center;
   justify-content: center;
@@ -62,19 +48,16 @@ body {
 }
 
 .footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 3vh;
+  text-align: center;
+  margin: 10vh;
 }
 .footer .footerList {
   list-style: none;
-  flex-direction: row;
 }
 .footer .footerList .fLi {
-  color: gainsboro;
   text-decoration: none;
+  color: aliceblue;
+  margin: 1vh;
 }
 
 /*# sourceMappingURL=style.css.map */

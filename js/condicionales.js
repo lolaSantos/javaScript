@@ -203,20 +203,33 @@ class Producto {
   constructor(id, nombre, importe) {
     this.id = id;
     this.nombre = nombre;
-    this.importe = this.importe;
+    this.importe = importe;
+  }
+  precioFinal() {
+    return parseFloat((this.importe * IVA).toFixed(2));
   }
 }
 
 function generadorAutomatico() {
-  productos.push(new Producto(1, "DRESS KOKO", 7000));
-  productos.push(new Producto(2, "POLLERA SEID", 3500));
-  productos.push(new Producto(3, "POLLERA LOW", 8000));
-  productos.push(new Producto(4, "SACO WAPA", 5500));
-  productos.push(new Producto(5, "MINI CLEAOTH", 4000));
-  productos.push(new Producto(6, "DRESS KALI", 7500));
+  productos.push(new Producto(123, "DRESS KOKO", 7000));
+  productos.push(new Producto(234, "POLLERA SEID", 3500));
+  productos.push(new Producto(345, "POLLERA LOW", 8000));
+  productos.push(new Producto(456, "SACO WAPA", 5500));
+  productos.push(new Producto(567, "MINI CLEAOTH", 4000));
+  productos.push(new Producto(678, "DRESS KALI", 7500));
 }
 
 generadorAutomatico();
+
+const carrito = [];
+
+function generarCarrito() {
+  carrito.push(new Producto(123, "PANTALON KAIA", 8500));
+  carrito.push(new Producto(234, "PAÑUELO SHAKE", 2000));
+  carrito.push(new Producto(345, "POLLERA CARMINA", 3500));
+}
+
+generarCarrito();
 
 function listarProductos() {
   console.table(productos);
@@ -241,17 +254,38 @@ const IVA = 1.21;
   return parseFloat((this.importe * IVA).toFixed);
 } */
 
+//FOR EACH
+
 function recorrerProductos() {
   productos.forEach((elemento) => {
-    console.log;
+    console.log(elemento);
   });
 }
 
+//FIND
+
 function buscarProducto() {
-  let resultado = productos.find;
+  let buscar = prompt("Que producto buscas?");
+  /* let resultado = productos.find((elemento) => elemento.nombre === buscar); */
+  let resultado = productos.find((elemento) =>
+    elemento.nombre.includes(buscar)
+  );
+  if (resultado === undefined) {
+    console.warn("No se encuentra la prenda");
+  } else {
+    console.log(resultado);
+  }
 }
 
+// Podemos ITERAR un array con: FOR - FOR OF - FOREACH(el mas rapido).
+
+//CREO QUE BORRE EL FOR OF
+
 /* const numeros = [12, 4, 56, 2, 333, 85];
+  
+
+// FOR 
+
 
 function listarElementos(array, fn) {
   for (elemento of array) {
@@ -259,3 +293,37 @@ function listarElementos(array, fn) {
   }
 }
  */
+
+function filtrarProductos() {
+  /* let buscar = prompt("Que producto busca?");
+
+   let resultado = productos.filter((elemento) =>
+    elemento.nombre.includes(buscar)
+  ); */
+
+  //FILTER
+
+  let resultado = productos.filter((elemento) => elemento.importe > 5000);
+  console.table(resultado);
+}
+
+//MAP
+
+function proyeccion(porcentaje) {
+  let resultado = productos.map((elemento) => {
+    return {
+      nombre: elemento.nombre,
+      importe: elemento.importe,
+      proyeccion: elemento.importe * porcentaje,
+      descuento: elemento.importe * 0.9,
+    };
+  });
+  console.table(resultado);
+}
+
+//REDUCE
+//ACC = ACUMULADOR ()
+function totalCarrito() {
+  let total = carrito.reduce((acc, elemento) => acc + elemento.importe, 0);
+  console.log("El total del carrito es:", total);
+}

@@ -322,8 +322,27 @@ function proyeccion(porcentaje) {
 }
 
 //REDUCE
+
 //ACC = ACUMULADOR ()
 function totalCarrito() {
-  let total = carrito.reduce((acc, elemento) => acc + elemento.importe, 0);
+  let total = carrito.reduce(
+    (acc, elemento) => acc + elemento.importe * elemento.cantidad,
+    0
+  );
   console.log("El total del carrito es:", total);
+}
+
+//SORT
+
+function ordenar() {
+  let productosOrdenados = productos.sort((a, b) => {
+    if (a.importe > b.importe) {
+      return 1;
+    }
+    if (a.importe < b.importe) {
+      return -1;
+    }
+    return 0;
+  });
+  console.table(productosOrdenados);
 }

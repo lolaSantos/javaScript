@@ -63,7 +63,9 @@ function armarHtml(producto) {
 }
 function recorrerProductos() {
   tbody.innerHTML = "";
+
   debugger;
+
   if (productos.length > 0) {
     productos.forEach((producto) => {
       tbody.innerHTML += armarHtml(producto);

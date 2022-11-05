@@ -130,7 +130,7 @@ function cotizarSeguro() {
 
 //Reservar la palabra const para declarar arrays.
 
-const IVA = 1.21;
+
 const nombre = "Lola Santos";
 
 */
@@ -150,7 +150,6 @@ const paises = [
 
 const paisesDelNorte = ["Mexico", "USA", "Canada"];
 
-const productos = [];
 const carrito = [];
 
 function listarPaises() {
@@ -185,9 +184,10 @@ function quitarPais() {
   let paisQuitado = paises.shift()//Elimina el pirmer elemento del array
   console.log(paisQuitado) 
 }
-
+*/
 
 const productos = [];
+const IVA = 1.21;
 
 class Producto {
   constructor(id, nombre, importe) {
@@ -210,6 +210,8 @@ function generadorAutomatico() {
 }
 
 generadorAutomatico();
+
+/*
 
 const carrito = [];
 

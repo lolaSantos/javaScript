@@ -1,0 +1,50 @@
+.conectando {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5vh;
+  align-items: center;
+  justify-content: center;
+
+  .paisesContainer {
+    color: cornsilk;
+    text-align: center;
+    margin: 3vh;
+    #seleccionarPais {
+      width: 25vw;
+      height: 5vh;
+      margin: 4vh;
+      border-radius: 20px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 3vh;
+    }
+    .contenedorBotones {
+      margin: 5vh;
+      align-items: center;
+      justify-content: center;
+      .boton {
+        width: 25vw;
+        height: 5vh;
+        margin: 4vh;
+        border-radius: 20px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .botonUno {
+        background-color: darkred;
+        color: aliceblue;
+      }
+      .botonDos {
+        background-color: darkorchid;
+        color: aliceblue;
+      }
+      .botonTres {
+        background-color: coral;
+        color: aliceblue;
+      }
+      .botonCuatro {
+        background-color: darkcyan;
+        color: aliceblue;
+      }
+    }
+  }
+}

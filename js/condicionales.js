@@ -132,6 +132,9 @@ function cotizarSeguro() {
 
 const IVA = 1.21;
 const nombre = "Lola Santos";
+
+*/
+
 const paises = [
   "Argentina",
   "Uruguay",
@@ -142,6 +145,9 @@ const paises = [
   "Cuba",
   "Guatemala",
 ];
+
+/*
+
 const paisesDelNorte = ["Mexico", "USA", "Canada"];
 
 const productos = [];
@@ -164,22 +170,6 @@ function recorrerArray() {
   }
 }
 
-function agregarPais() {
-  let nuevoPais = prompt("Ingresa nuevos pais: ");
-  if (!paises.includes(nuevoPais)) {
-    paises.push(nuevoPais);
-    //console.log("El pais ya esta en la lista.")
-  } else {
-    respuesta = confirm(
-      "El pais " +
-        nuevoPais +
-        " ya esta en la lista de paises. Deseas agregar otro?"
-    );
-    if (respuesta) {
-      agregarPais();
-    }
-  }
-
   paises.push(nuevoPais); //PUSH agrega elemento en la ultima posicion de un array
   //paises.unshift(nuevoPais)//UNSHIFT agrega elemento en la primera posicion de un array
 }
@@ -195,7 +185,7 @@ function quitarPais() {
   let paisQuitado = paises.shift()//Elimina el pirmer elemento del array
   console.log(paisQuitado) 
 }
- */
+
 
 const productos = [];
 
@@ -249,10 +239,10 @@ const resultado = (num1, num2) => num1 + num2;
 
 const IVA = 1.21;
 
-/* precioFinal();
+ precioFinal();
 {
   return parseFloat((this.importe * IVA).toFixed);
-} */
+} 
 
 //FOR EACH
 
@@ -266,7 +256,7 @@ function recorrerProductos() {
 
 function buscarProducto() {
   let buscar = prompt("Que producto buscas?");
-  /* let resultado = productos.find((elemento) => elemento.nombre === buscar); */
+ let resultado = productos.find((elemento) => elemento.nombre === buscar); 
   let resultado = productos.find((elemento) =>
     elemento.nombre.includes(buscar)
   );
@@ -275,13 +265,13 @@ function buscarProducto() {
   } else {
     console.log(resultado);
   }
-}
+
 
 // Podemos ITERAR un array con: FOR - FOR OF - FOREACH(el mas rapido).
 
 //CREO QUE BORRE EL FOR OF
 
-/* const numeros = [12, 4, 56, 2, 333, 85];
+const numeros = [12, 4, 56, 2, 333, 85];
   
 
 // FOR 
@@ -292,14 +282,14 @@ function listarElementos(array, fn) {
     fn(elemento);
   }
 }
- */
+ 
 
 function filtrarProductos() {
-  /* let buscar = prompt("Que producto busca?");
+let buscar = prompt("Que producto busca?");
 
    let resultado = productos.filter((elemento) =>
     elemento.nombre.includes(buscar)
-  ); */
+  ); 
 
   //FILTER
 
@@ -346,3 +336,15 @@ function ordenar() {
   });
   console.table(productosOrdenados);
 }
+
+// DOM ARRAYS
+
+const listaDePaises = document.querySelector("ul");
+
+function mostrarPaises() {
+  paises.forEach((pais) => {
+    listaDePaises.innerHTML += "<li>" + pais + "</li>";
+  });
+}
+mostrarPaises();
+ */

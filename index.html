@@ -17,11 +17,44 @@
   <body>
     <!-- TERMINA NAVBAR -->
     <!-- MAIN -->
+
+
     <main class="container">
       <div class="titleContainer">
         <h1 id="title">Bolo Garden</h1>
         <h4 id="subTitle">CLOTHES</h4>
       </div>
+
+
+
+<!-- CLASE DOM -->
+
+    <div class="conectando">
+      <h2 class="tituloDom">DOM Y EVENTOS</h2>
+      <article class="paisesContainer">
+        <div class="paisCoContainer">
+          <label for="seleccionarPais">PAIS</label>
+          <select name="seleccionarPais" id="seleccionarPais">
+            <option selected disabled>....</option>
+            <option>Argentina</option>
+            <option>Uruguay</option>
+            <option>Chile</option>
+            <option>Peru</option>
+          </select>
+          <div>
+            <ul class="listarPaises">
+
+            </ul>
+          </div>
+        </div>
+        <div class="contenedorBotones">
+          <button class="boton botonUno" onclick="listarPaises()">LISTAR PAISES</button>
+          <button class="boton botonDos" onclick="agregarPaises()">AGREGAR PAIS</button>
+          <button class="boton botonTres" onclick="buscarPaises()">BUSCAR PAIS</button>
+          <button class="boton botonCuatro" onclick="quitarPais()">QUITAR PAIS</button>
+        </div>
+      </div>
+      </article>
 
 
       <div class="cardContainer">

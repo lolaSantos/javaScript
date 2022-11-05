@@ -36,7 +36,7 @@ body {
   margin: 5vh;
   padding: 0;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 30px;
 }
 .cardContainer .card .cardImg {
   width: 100%;
@@ -58,6 +58,56 @@ body {
   text-decoration: none;
   color: aliceblue;
   margin: 1vh;
+}
+
+.conectando {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5vh;
+  align-items: center;
+  justify-content: center;
+}
+.conectando .paisesContainer {
+  color: cornsilk;
+  text-align: center;
+  margin: 3vh;
+}
+.conectando .paisesContainer #seleccionarPais {
+  width: 25vw;
+  height: 5vh;
+  margin: 4vh;
+  border-radius: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3vh;
+}
+.conectando .paisesContainer .contenedorBotones {
+  margin: 5vh;
+  align-items: center;
+  justify-content: center;
+}
+.conectando .paisesContainer .contenedorBotones .boton {
+  width: 25vw;
+  height: 5vh;
+  margin: 4vh;
+  border-radius: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+.conectando .paisesContainer .contenedorBotones .botonUno {
+  background-color: darkred;
+  color: aliceblue;
+}
+.conectando .paisesContainer .contenedorBotones .botonDos {
+  background-color: darkorchid;
+  color: aliceblue;
+}
+.conectando .paisesContainer .contenedorBotones .botonTres {
+  background-color: coral;
+  color: aliceblue;
+}
+.conectando .paisesContainer .contenedorBotones .botonCuatro {
+  background-color: darkcyan;
+  color: aliceblue;
 }
 
 /*# sourceMappingURL=style.css.map */

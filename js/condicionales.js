@@ -7,7 +7,7 @@ function saludar() {
 }
 
 //saludar();
- 
+
 // FUNCIONES CON PARAMETROS
 
 function calcular(primerNumero, segundoNumero) {
@@ -27,18 +27,16 @@ function pedirNumero() {
 
 //En pedirnumero a lo ultimo vemos como  se reutiliza la funcion, en este caso, calcular.
 
-
 //FUNCIONES CON RETORNO
 
- function realizarCalculo(pNo, sNo) {
+function realizarCalculo(pNo, sNo) {
   return pNo * sNo;
 }
 
 function verMult() {
   debugger;
   console.log("Resultado de la multiplicaicon:", realizarCalculo(4567, 5678));
-
-} 
+}
 
 const persona1 = {
   nombre: "Luis",
@@ -54,15 +52,13 @@ const persona2 = {
   edad: "33",
   cargo: "vendedor",
   ingreso: "22-12-2009",
-}; 
-
+};
 
 // OBJETOS CONSTRUCTORES
 
 //la primera inicial de una funcion constructora debe ser en mayuscula.
 
-
- function altaDeEmpleado() {
+function altaDeEmpleado() {
   let nombre = prompt("Ingresa el nombre");
   let apellido = prompt("Ingresa el apellido");
   let edad = prompt("Ingresa edad");
@@ -71,7 +67,7 @@ const persona2 = {
 }
 
 const empleado1 = new Empleado(nombre, apellido, edad, cargo, ingreso);
-console.log(empleado1); 
+console.log(empleado1);
 
 function Empleado(nombre, apellido, edad, cargo, ingreso) {
   this.nombre = nombre;
@@ -80,15 +76,6 @@ function Empleado(nombre, apellido, edad, cargo, ingreso) {
   this.cargo = cargo;
   this.ingreso = ingreso;
 }
-
-const empleado1 = new Empleado(
-  "Luis",
-  "Gonzalez",
-  "30",
-  "administrativo",
-  "30-10-2010"
-);
-
 const empleado2 = new Empleado(
   "Javier",
   "Ruiz",
@@ -99,10 +86,6 @@ const empleado2 = new Empleado(
 const producto1 = new Producto("KOKO", 7000, 10);
 const producto2 = new Producto("SEID", 4500, 15);
 const producto3 = new Producto("LOW", 9500, 7);
-
-
-
-
 class Cotizador {
   constructor(metros2, alarma, factor) {
     this.metros2 = metros2;
@@ -124,16 +107,9 @@ function cotizarSeguro() {
   console.log("El costo del seguro es:", cotizadorHogar.cotizarPoliza());
 }
 
-
-
 // ARRAYS Y FUNCIONES DE ORDEN SUPERIOR
 
 //Reservar la palabra const para declarar arrays.
-
-
-const nombre = "Lola Santos";
-
-*/
 
 const paises = [
   "Argentina",
@@ -146,8 +122,6 @@ const paises = [
   "Guatemala",
 ];
 
-/*
-
 const paisesDelNorte = ["Mexico", "USA", "Canada"];
 
 const carrito = [];
@@ -159,7 +133,7 @@ function listarPaises() {
 // Para recorrer un array se suele usar el ciclo for
 
 function recorrerArray() {
-   for (let i = 0; i < paises.length; i++) console.log(paises[i]); 
+  for (let i = 0; i < paises.length; i++) console.log(paises[i]);
 
   // ciclo FOR OF
 
@@ -169,10 +143,6 @@ function recorrerArray() {
   }
 }
 
-  paises.push(nuevoPais); //PUSH agrega elemento en la ultima posicion de un array
-  //paises.unshift(nuevoPais)//UNSHIFT agrega elemento en la primera posicion de un array
-}
-
 function quitarPais() {
   let paisQuitar = prompt("Que pais queres quitar?:");
   let posicion = paises.indexOf(paisQuitar); //IndexOFF ubica el indice de un elemento
@@ -180,13 +150,8 @@ function quitarPais() {
     paises.splice(posicion, 1); //SPLICE quita un elemento desde un indice especifico
     console.log(paisQuitar);
   }
-    let paisQuitado = paises.pop()//Elimina el ultimo elemento del array
-  let paisQuitado = paises.shift()//Elimina el pirmer elemento del array
-  console.log(paisQuitado) 
-}
 */
 
-const productos = [];
 const IVA = 1.21;
 
 class Producto {
@@ -210,143 +175,132 @@ function generadorAutomatico() {
 }
 
 generadorAutomatico();
-
 /*
 
-const carrito = [];
+  const carrito = [];
 
-function generarCarrito() {
-  carrito.push(new Producto(123, "PANTALON KAIA", 8500));
-  carrito.push(new Producto(234, "PAÑUELO SHAKE", 2000));
-  carrito.push(new Producto(345, "POLLERA CARMINA", 3500));
-}
-
-generarCarrito();
-
-function listarProductos() {
-  console.table(productos);
-}
-
-const agregarProducto = () => {
-  let id = creoID();
-  let descripcion = prompt("Descripcion del nuevo producto:").toUpperCase();
-  let importe = parseFloat(prompt("Importe ( sin IVA ): "));
-  productos.push(new Producto(id, descripcion, importe));
-  listarProductos();
-};
-
-const creoID = () => parseInt(Math.random() * 10000); //ID numerico dinamico
-
-const resultado = (num1, num2) => num1 + num2;
-
-const IVA = 1.21;
-
- precioFinal();
-{
-  return parseFloat((this.importe * IVA).toFixed);
-} 
-
-//FOR EACH
-
-function recorrerProductos() {
-  productos.forEach((elemento) => {
-    console.log(elemento);
-  });
-}
-
-//FIND
-
-function buscarProducto() {
-  let buscar = prompt("Que producto buscas?");
- let resultado = productos.find((elemento) => elemento.nombre === buscar); 
-  let resultado = productos.find((elemento) =>
-    elemento.nombre.includes(buscar)
-  );
-  if (resultado === undefined) {
-    console.warn("No se encuentra la prenda");
-  } else {
-    console.log(resultado);
+  function generarCarrito() {
+    carrito.push(new Producto(123, "PANTALON KAIA", 8500));
+    carrito.push(new Producto(234, "PAÑUELO SHAKE", 2000));
+    carrito.push(new Producto(345, "POLLERA CARMINA", 3500));
   }
 
+  generarCarrito();
 
-// Podemos ITERAR un array con: FOR - FOR OF - FOREACH(el mas rapido).
+  function listarProductos() {
+    console.table(productos);
+  }
 
-//CREO QUE BORRE EL FOR OF
+  const agregarProducto = () => {
+    let id = creoID();
+    let descripcion = prompt("Descripcion del nuevo producto:").toUpperCase();
+    let importe = parseFloat(prompt("Importe ( sin IVA ): "));
+    productos.push(new Producto(id, descripcion, importe));
+    listarProductos();
+  };
 
-const numeros = [12, 4, 56, 2, 333, 85];
-  
+  const creoID = () => parseInt(Math.random() * 10000); //ID numerico dinamico
 
-// FOR 
+  const resultado = (num1, num2) => num1 + num2;
 
+  precioFinal();
+  {
+    return parseFloat((this.importe * IVA).toFixed);
+  }
 
-function listarElementos(array, fn) {
-  for (elemento of array) {
-    fn(elemento);
+  //FOR EACH
+
+  function recorrerProductos() {
+    productos.forEach((elemento) => {
+      console.log(elemento);
+    });
+  }
+
+  //FIND
+
+  function buscarProducto() {
+    let buscar = prompt("Que producto buscas?");
+    let resultado = productos.find((elemento) =>
+      elemento.nombre.includes(buscar)
+    );
+    if (resultado === undefined) {
+      console.warn("No se encuentra la prenda");
+    } else {
+      console.log(resultado);
+    }
+
+    // Podemos ITERAR un array con: FOR - FOR OF - FOREACH(el mas rapido).
+
+    //CREO QUE BORRE EL FOR OF
+
+    const numeros = [12, 4, 56, 2, 333, 85];
+
+    // FOR
+
+    function listarElementos(array, fn) {
+      for (elemento of array) {
+        fn(elemento);
+      }
+    }
+
+    function filtrarProductos() {
+      let buscar = prompt("Que producto busca?");
+      //FILTER
+
+      let resultado = productos.filter((elemento) => elemento.importe > 5000);
+      console.table(resultado);
+    }
+
+    //MAP
+
+    function proyeccion(porcentaje) {
+      let resultado = productos.map((elemento) => {
+        return {
+          nombre: elemento.nombre,
+          importe: elemento.importe,
+          proyeccion: elemento.importe * porcentaje,
+          descuento: elemento.importe * 0.9,
+        };
+      });
+      console.table(resultado);
+    }
+
+    //REDUCE
+
+    //ACC = ACUMULADOR ()
+    function totalCarrito() {
+      let total = carrito.reduce(
+        (acc, elemento) => acc + elemento.importe * elemento.cantidad,
+        0
+      );
+      console.log("El total del carrito es:", total);
+    }
+
+    //SORT
+
+    function ordenar() {
+      let productosOrdenados = productos.sort((a, b) => {
+        if (a.importe > b.importe) {
+          return 1;
+        }
+        if (a.importe < b.importe) {
+          return -1;
+        }
+        return 0;
+      });
+      console.table(productosOrdenados);
+    }
+
+    // DOM ARRAYS
+
+    const listaDePaises = document.querySelector("ul");
+
+    function mostrarPaises() {
+      paises.forEach((pais) => {
+        listaDePaises.innerHTML += "<li>" + pais + "</li>";
+      });
+    }
+    mostrarPaises();
   }
 }
- 
-
-function filtrarProductos() {
-let buscar = prompt("Que producto busca?");
-
-   let resultado = productos.filter((elemento) =>
-    elemento.nombre.includes(buscar)
-  ); 
-
-  //FILTER
-
-  let resultado = productos.filter((elemento) => elemento.importe > 5000);
-  console.table(resultado);
-}
-
-//MAP
-
-function proyeccion(porcentaje) {
-  let resultado = productos.map((elemento) => {
-    return {
-      nombre: elemento.nombre,
-      importe: elemento.importe,
-      proyeccion: elemento.importe * porcentaje,
-      descuento: elemento.importe * 0.9,
-    };
-  });
-  console.table(resultado);
-}
-
-//REDUCE
-
-//ACC = ACUMULADOR ()
-function totalCarrito() {
-  let total = carrito.reduce(
-    (acc, elemento) => acc + elemento.importe * elemento.cantidad,
-    0
-  );
-  console.log("El total del carrito es:", total);
-}
-
-//SORT
-
-function ordenar() {
-  let productosOrdenados = productos.sort((a, b) => {
-    if (a.importe > b.importe) {
-      return 1;
-    }
-    if (a.importe < b.importe) {
-      return -1;
-    }
-    return 0;
-  });
-  console.table(productosOrdenados);
-}
-
-// DOM ARRAYS
-
-const listaDePaises = document.querySelector("ul");
-
-function mostrarPaises() {
-  paises.forEach((pais) => {
-    listaDePaises.innerHTML += "<li>" + pais + "</li>";
-  });
-}
-mostrarPaises();
  */

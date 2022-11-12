@@ -1,61 +1,14 @@
-// DOM ARRAYS
-
-const titulo = document.querySelector("h2.tituloDom");
-
-const listarPaises = document.querySelector("ul.listarPaises");
-
-// escribir diretamente el html
-
-function mostrarPaises() {
-  listarPaises.innerHTML = "";
-  paises.forEach((pais) => {
-    // listarPaises.innerHTML += "<li id='" + "id-" + pais + "'>" + pais + "</li>";
-
-    //TEMPLATE HTML
-    listarPaises.innerHTML += `<li id="id-${pais}">${pais}</li>`;
-
-    // TEMPLATE LITERALS
-  });
-}
-
-/* paises.forEach((pais) => {
-    const liPais = document.createElement("li");
-    liPais.id = "id-" + pais;
-    liPais.innerText = pais;
-    listarPaises.append(liPais); 
-  });*/
-
-mostrarPaises();
-
-function eliminarElemento(id) {
-  const elementoHtml = document.getElementById(id);
-  elementoHtml.remove();
-}
-
-function agregarPais() {
-  let nuevoPais = prompt("Ingresa nuevos pais: ");
-  if (!paises.includes(nuevoPais)) {
-    paises.push(nuevoPais);
-    //console.log("El pais ya esta en la lista.")
-  } else {
-    respuesta = confirm(
-      "El pais " +
-        nuevoPais +
-        " ya esta en la lista de paises. Deseas agregar otro?"
-    );
-    if (respuesta) {
-      agregarPais();
-    }
-  }
-}
-
 //DOM PRODUCTOS
 
 const tbody = document.querySelector("tbody");
 
+const productos = [];
+
+const carrito = [];
+
 function armarHtml(producto) {
   return `<tr>
-    <td>${producto.id}</td>
+    <td id="productID">${producto.id}</td>
     <td>${producto.nombre}</td>
     <td>${producto.importe}</td>
     <td>${producto.precioFinal()}</td>
@@ -63,14 +16,62 @@ function armarHtml(producto) {
 }
 function recorrerProductos() {
   tbody.innerHTML = "";
-
-  debugger;
-
   if (productos.length > 0) {
     productos.forEach((producto) => {
       tbody.innerHTML += armarHtml(producto);
     });
+    generarListenerID();
   }
 }
 
 recorrerProductos();
+
+function generarListenerID() {
+  const IDdeproductos = document.querySelectorAll("td#productID");
+
+  if (IDdeproductos.length > 0) {
+    IDdeproductos.forEach((productId) => {
+      productId.addEventListener("dblclick", (e) => {
+        console.log(e.target.innerText);
+        carrito.push(e.target.innerText);
+        console.table(carrito);
+      });
+    });
+  }
+}
+
+//PROBANDO EN MI PROYECTO (msalio mal)
+
+const divPrenda = document.querySelector("div.card");
+
+function carritoPrendas(producto) {
+  return `<div class="card">
+  <h5 class="cardTitle">${producto.nombre}</h5>
+  <p class="cardPrecio">${producto.precio}</p>
+  <a href="" class="cardLink">✿</a>
+</div>`;
+}
+
+function verCarrito() {
+  divPrenda.innerHTML = "";
+  if (productos.length > 0) {
+    productos.forEach((producto) => {
+      divPrenda.innerHTML += carritoPrendas(producto);
+    });
+    generarElCarrito();
+  }
+}
+verCarrito();
+
+function generarElCarrito() {
+  const classPrenda = document.querySelectorAll("a.cardLink");
+  if (classPrenda.length > 0) {
+    classPrenda.forEach((cardLink) => {
+      cardLink.addEventListener("click", (e) => {
+        console.log(e.target.innerText);
+        carrito.push(e.target.innerText);
+        console.table(carrito);
+      });
+    });
+  }
+}

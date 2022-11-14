@@ -152,7 +152,7 @@ function quitarPais() {
   }
 */
 
-const IVA = 1.21;
+/* const IVA = 1.21;
 
 class Producto {
   constructor(id, nombre, importe) {
@@ -174,7 +174,7 @@ function generadorAutomatico() {
   productos.push(new Producto(678, "DRESS KALI", 7500));
 }
 
-generadorAutomatico();
+generadorAutomatico(); */
 /*
 
   const carrito = [];

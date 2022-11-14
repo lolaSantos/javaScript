@@ -57,3 +57,33 @@
     border: 2px rgb(141, 0, 0);
   }
 }
+
+/* FORMULARIO */
+
+.formulario {
+  height: auto;
+  width: 40%;
+  padding: 3vh;
+  margin: 10vh;
+  border-radius: 10px;
+  background-color: rgb(61, 78, 129);
+  font-family: "Courier New", Courier, monospace;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  input {
+    padding: 1vh;
+    margin: 1vh;
+    border-radius: 5px;
+    border: 1px grey;
+    background-color: white;
+  }
+  button {
+    border-radius: 5px;
+    border: 1px grey;
+    padding: 1vh;
+    background-color: white;
+  }
+}

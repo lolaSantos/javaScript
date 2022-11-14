@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: black;
 }
 
 body {
@@ -108,6 +109,40 @@ body {
 .conectando .paisesContainer .contenedorBotones .botonCuatro {
   background-color: darkcyan;
   color: aliceblue;
+}
+
+/* TABLA */
+.contenedorTabla td th {
+  padding: 5vh;
+  border: 2px rgb(141, 0, 0);
+}
+
+/* FORMULARIO */
+.formulario {
+  height: auto;
+  width: 40%;
+  padding: 3vh;
+  margin: 10vh;
+  border-radius: 10px;
+  background-color: rgb(61, 78, 129);
+  font-family: "Courier New", Courier, monospace;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.formulario input {
+  padding: 1vh;
+  margin: 1vh;
+  border-radius: 5px;
+  border: 1px grey;
+  background-color: white;
+}
+.formulario button {
+  border-radius: 5px;
+  border: 1px grey;
+  padding: 1vh;
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
